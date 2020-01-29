@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    labels:
+    run: mynx
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 4
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      run: mynx
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: mynx
+    spec:
+      containers:
+      - image: nginx
+        imagePullPolicy: Always
+        name: mynx

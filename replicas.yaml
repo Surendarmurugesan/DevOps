@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    run: mynginx
+  name: mynginx
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: mynginx
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: mynginx
+    spec:
+      containers:
+      - image: nginx
+        imagePullPolicy: Always
+        name: mynginx
