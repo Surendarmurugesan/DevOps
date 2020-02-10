@@ -1,0 +1,73 @@
+  999  kind delete cluster
+ 1000  kind create cluster --config k8s.yaml
+ 1010  kubectl create ns finance
+ 1011  openssl genrsa -out john.key 2048
+ 1014  cat john.key | base64 -w0
+ 1016  openssl req -new -key john.key -out john.csr -subj "/CN=john/O=finance"
+ 1022  docker cp kind-control-plane:/etc/kubernetes/pki/ca.crt .
+ 1024  docker cp kind-control-plane:/etc/kubernetes/pki/ca.key .
+ 1026  openssl x509 -req -in john.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out john.crt -days 365
+ 1029  kubectl config view
+ 1030  kubectl --kubeconfig john.kubeconfig config set-cluster kind-kind --server https://127.0.0.1:32768 --certificate-authority=ca.crt
+ 1033  cat john.kubeconfig
+ 1034  kubectl --kubeconfig john.kubeconfig config set-credentials john --client-certificate /home/linux/k8s/kubernetes/rbac/john.crt --client-key /home/linux/k8s/kubernetes/rbac/john.key
+ 1038  kubectl --kubeconfig john.kubeconfig config set-context john-kubernetes --cluster kind-kind --namespace finance
+ 1041  sudo nano john.kubeconfig
+ 1042  kubectl --kubeconfig john.kubeconfig get pods
+ 1043  cat john.kubeconfig
+ 1044  nano john.kubeconfig
+ 1045  kubectl --kubeconfig john.kubeconfig get pods
+ 1047  cat john.crt | base64 -w0
+ 1048  kubectl create role john-finance --verb=get,list --resource=pods --namespace finance
+ 1050  kubectl get role -n finance
+ 1051  kubectl get role -n finance -o yaml
+ 1052  kubectl create rolebinding john-finance-rolebinding --role=john-finance --user=john --namespace finance
+ 1054  kubectl -n finance list rolebinding
+ 1055  kubectl -n finance list rolebinding -o yaml
+ 1056  kubectl -n finance get rolebinding -o yaml
+ 1061  kubectl --kubeconfig john.kubeconfig get pods
+ 1062  kubectl --kubeconfig john.kubeconfig get all
+ 1063  kubectl --kubeconfig john.kubeconfig get pods -n kube-system
+ 1064  kubectl -n finance edit role john-finance
+ 1128  kubectl --kubeconfig john.kubeconfig -n finance run nginx --image nginx
+ 1129  kubectl get all -n finance
+ 1130  kubectl --kubeconfig john.kubeconfig -n finance create nginx --image nginx
+ 1132  cat john.crt
+ 1133  cat john.csr
+ 1134  cat john.key
+ 1135  kubectl --kubeconfig john.kubeconfig -n finance get all
+ 1136  kubectl --kubeconfig john.kubeconfig get all
+ 1137  kubectl --kubeconfig john.kubeconfig run nginx --image nginx
+ 1138  kubectl -n finance edit role john-finance
+ 1139  kubectl --kubeconfig john.kubeconfig run nginx --image nginx
+ 1140  kubectl get all
+ 1141  kubectl get all -n finance
+ 1142  kubectl --kubeconfig john.kubeconfig delete deploy nginx
+ 1143  kubectl get all -n finance
+ 1144  kubectl -n finance get rolebinding john-finance-rolebinding -o yaml
+ 1145  openssl genrsa -out surendar.key 2048
+ 1148  openssl req -new -key surendar.key -out surendar.csr -subj "/CN=surendar/O=finance"
+ 1160  cat surendar.crt
+ 1161  kubectl config view
+ 1162  kubectl --kubeconfig surendar.kubeconfig config set-cluster kind-kind --server https://127.0.0.1:32768 --certificate-authority ca.crt
+ 1163  cat surendar.kubeconfig
+ 1164  kubectl --kubeconfig surendar.kubeconfig config set-credentials surendar --client-certificate /home/linux/k8s/kubernetes/rbac/surendar.crt --client-key /home/linux/k8s/kubernetes/rbac/surendar.key
+ 1165  cat surendar.kubeconfig
+ 1166  kubectl --kubeconfig surendar.kubeconfig config set-context surendar-kubernetes --cluster kind-kind --namespace finance --user surendar
+ 1167  cat surendar.kubeconfig
+ 1168  sudo nano surendar.kubeconfig
+ 1169  kubectl --kubeconfig surendar.kubeconfig get pods
+ 1170  kubectl -n finance get rolebinding john-finance-binding -o yaml
+ 1171  kubectl -n finance get rolebinding john-finance-rolebinding -o yaml
+ 1172  kubectl -n finance delete rolebinding john-finance-rolebinding
+ 1173  kubectl -n finance get rolebinding
+ 1174  kubectl create rolebinding finance-rolebinding --role=john-finance --group=finance --namespace=finance
+ 1175  kubectl -n finance get rolebinding
+ 1176  kubectl --kubeconfig surendar.kubeconfig get all
+ 1177  kubectl --kubeconfig surendar.kubeconfig get pods
+ 1178  kubectl -n finance get rolebinding finance-rolebinding -o yaml
+ 1180  git add .
+ 1181  git commit -m "RBAC in kubernetes"
+ 1182  git push -u origin
+
+
