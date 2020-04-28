@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  creationTimestamp: "2020-04-28T07:51:48Z"
+  name: surendar-rolebinding
+  namespace: finance
+  resourceVersion: "46620"
+  selfLink: /apis/rbac.authorization.k8s.io/v1/namespaces/finance/rolebindings/surendar-rolebinding
+  uid: e3868650-846a-46b7-b68b-ccc120948638
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: first-role
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: surendar

@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  creationTimestamp: "2020-04-28T07:45:26Z"
+  name: first-role
+  namespace: finance
+  resourceVersion: "45531"
+  selfLink: /apis/rbac.authorization.k8s.io/v1/namespaces/finance/roles/first-role
+  uid: 460a5995-dbe1-4343-8f91-66baf232d874
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - list

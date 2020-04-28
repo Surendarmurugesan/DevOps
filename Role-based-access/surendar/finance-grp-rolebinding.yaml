@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  creationTimestamp: "2020-04-28T08:09:32Z"
+  name: finance-grp-rolebinding
+  namespace: finance
+  resourceVersion: "49653"
+  selfLink: /apis/rbac.authorization.k8s.io/v1/namespaces/finance/rolebindings/finance-grp-rolebinding
+  uid: f769b3fb-fb4a-404a-a1b6-da0eb4a42eea
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: first-role
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: finance
