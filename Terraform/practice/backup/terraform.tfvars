@@ -1,0 +1,1 @@
+file_content = "These values are pick from terraform.tfvars file"

@@ -1,0 +1,1 @@
+file_content = "custom tfvars file for testing purpose"
