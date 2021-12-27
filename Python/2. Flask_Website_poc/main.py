@@ -1,5 +1,5 @@
 ### This is used for start our wesite (or) start our web-server.
-from website.templates import create_app
+from website import create_app
 
 app = create_app()
 
