@@ -1,0 +1,31 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: Copy the file from jump to server 01
+      copy:
+        src: /usr/src/itadmin/blog.txt
+        dest: /opt/itadmin/blog.txt
+        owner: tony
+        group: tony
+        mode: '0777'
+      when: inventory_hostname == "stapp01"
+
+    - name: Copy the file from jump to server 02
+      copy:
+        src: /usr/src/itadmin/story.txt
+        dest: /opt/itadmin/story.txt
+        owner: steve
+        group: steve
+        mode: '0777'
+      when: inventory_hostname == "stapp02"
+
+    - name: Copy the file from jump to server 03
+      copy:
+        src: /usr/src/itadmin/media.txt
+        dest: /opt/itadmin/media.txt
+        owner: banner
+        group: banner
+        mode: '0777'
+      when: inventory_hostname == "stapp03"
