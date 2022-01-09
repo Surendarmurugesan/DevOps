@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: httpd-replicaset
+  labels:
+    app: httpd_app
+    type: front-end
+spec:
+  selector:
+    matchLabels:
+      app: httpd_app
+      type: front-end
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: httpd_app
+        type: front-end
+    spec:
+     containers:
+     - name: httpd-container
+       image:  httpd:latest

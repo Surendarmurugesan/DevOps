@@ -1,0 +1,17 @@
+#Hostpath volume attach with Pod.
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: hostpath-pod
+spec:
+  containers:
+  - name: hostpath-container
+    image: nginx
+    volumeMounts:
+    - name: hostpath-volume
+      mountPath: /var/www/html
+  volumes:
+  - name: hostpath-volume
+    hostPath:
+      path: /code
+      type: Directory

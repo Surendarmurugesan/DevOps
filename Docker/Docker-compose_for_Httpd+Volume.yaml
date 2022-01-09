@@ -1,0 +1,11 @@
+#Docker-compose file
+
+version: "3"
+services:
+  webapp:
+    container_name: httpd
+    image: httpd:latest
+    ports:
+      - "3001:80"
+    volumes:
+      - /opt/devops:/usr/local/apache2/htdocs

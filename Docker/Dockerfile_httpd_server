@@ -1,0 +1,11 @@
+#Write a Dockerfile.
+FROM ubuntu
+
+RUN apt-get update
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get install apache2 -y
+
+RUN sed -i 's/80/5002/g' /etc/apache2/ports.conf
+
+ENTRYPOINT ["/usr/bin/apache2ctl","-D","FOREGROUND"]

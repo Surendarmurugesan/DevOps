@@ -1,0 +1,69 @@
+#Init containers
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ic-deploy-devops
+  labels:
+    app: ic-devops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ic-devops
+  template:
+    metadata:
+      labels:
+        app: ic-devops
+    spec:
+      initContainers:
+      - name: ic-msg-devops
+        image: debian:latest
+        command: ['/bin/bash', '-c', 'echo Init Done - Welcome to xFusionCorp Industries > /ic/ecommerce']
+        volumeMounts:
+        - name: ic-volume-devops
+          mountPath: /ic
+      containers:
+      - name: ic-main-devops
+        image: debian:latest
+        command: ['/bin/bash', '-c', 'while true; do cat /ic/ecommerce; sleep 5; done']
+        volumeMounts:
+        - name: ic-volume-devops
+          mountPath: /ic
+      volumes:
+      - name: ic-volume-devops
+        emptyDir: {}
+
+
+# kubernetes time-check pod.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: time-check
+  namespace: datacenter
+spec:
+  containers:
+  - name: time-check
+    image: busybox:latest
+    command: [ "/bin/sh" ]
+    args: [ " -c ", " while true; do date; sleep $TIME_FREQ;done >> /opt/finance/time/time-check.log" ]
+    volumeMounts:
+    - name: log-volume
+      mountPath: /opt/finance/time
+      readOnly: true
+    envFrom:
+    - configMapRef:
+        name: time-config
+  volumes:
+  - name: log-volume
+    emptyDir: {}
+    
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: time-config
+  namespace: datacenter
+data:
+  TIME_FREQ: "8"
+
+  
