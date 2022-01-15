@@ -1,0 +1,20 @@
+Difference between Azure App services & Azure functions ?
+    App Service is a platform as a service (PaaS) offering.
+
+    Azure functions are concerned only about the code running your service and not the underlying platform or infrastructure.
+
+What is Azure Batch?
+    Azure Batch enables large-scale parallel and high-performance computing (HPC) batch jobs with the ability to scale to tens, hundreds, or thousands of VMs.
+
+What's the main difference between stateless and stateful?
+    In Stateless, server is not needed to keep the server information or session details to itself. In stateful, a server is required to maintain the current state and session information.
+
+Functions vs Logic Apps
+    Functions and Logic Apps can both create complex orchestrations. An orchestration is a collection of functions or steps that are executed to accomplish a complex task.
+
+    With Functions, you write code to complete each step.
+    With Logic Apps, you use a GUI to define the actions and how they relate to one another.
+
+1. Azure App Service to create your website front-ends.
+2. Azure Functions to create event-driven application logic that only runs when you need it.
+3. Azure Virtual Desktop to quickly provide a customized operating system and software environment for your remote workers.    
