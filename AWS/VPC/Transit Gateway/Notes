@@ -1,0 +1,21 @@
+Transit Gateway use peering in multiple regions, Organizations & On-premises.
+
+Your data is automatically encrypted and never travels over the public internet.
+
+Transit Gateway have dedicated Route table.
+
+Network reachability analyzer doesn't support to transit gateway but we can check with transit gw id.
+
+Terminology:
+    Associations:
+        Each attachment is associated with exactly one route table.
+        Each route table can be associated with zero to many attachments.
+
+Evaluation Order::
+    priority
+    1   VPC     tgw-attach-vpc  Static or Propagated
+    2   VPN     tgw-attach-vpn  Static
+    3   Direct  dxgw_id         Propagated
+        connect
+    4   VPN
+    5   VPC

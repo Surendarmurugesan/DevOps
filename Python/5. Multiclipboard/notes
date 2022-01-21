@@ -1,0 +1,8 @@
+# json.dump = Write the JSON content
+# data = json script ## f mention as file.
+# save_data("text.json", {"key": "value"})
+# JSON = JavaScript object notation
+
+# To Read the file
+# json.load() takes a file object and returns the json object.
+# load_data("text.json")
