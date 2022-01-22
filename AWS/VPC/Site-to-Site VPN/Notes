@@ -1,0 +1,31 @@
+Site-to-Site VPN connection:
+
+To establishing connection between VPC & our on-premise environment.Both of them are in different networks, Probably in different economic systems.
+
+Autonomous System:
+    The internet is a network of networks. It is broken up into hundreds of thousands of smaller networks.
+    These Autonomous System Number (ASN) areonly required for external BGP(Border Gateway Protocol)
+
+    BGP(Border Gateway Protocol):
+        BGP is the postal service of the internet.
+        When someone submits data via the internet, BGP is responsible for looking at all of the available paths that data could travel and picking the best route Which usually means hopping between autonomous systems using external BGP & within an AS internal BGP.
+
+
+Site-to-Site VPN Routing Options:
+    Static Routing
+    Dynamic Routing
+
+Redundancy:
+    To protect against a loss of connectivity, customer gateway device becomes unavailable, you can set up Second Site-to-Site VPN to your VPC.
+    If one of device in maintenance while traffic continues to flow over the second customer gateway.
+
+    customer gateway = On-premises server
+
+Resiliency:
+    In AWS side, Two tunnels to provide increased availability to your VPC.
+    If device failure within AWS, Your VPN connection automatically fails over to second tunnel so that your access isn't interrupted.
+    
+Monitoring:
+    Using by Cloudwatch
+    Using by AWS Health Events
+

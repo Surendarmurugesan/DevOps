@@ -1,0 +1,19 @@
+AWS Network Firewall is a managed service that makes it easy to deploy essential network protections for all of your Amazon Virtual Private Clouds (VPCs)
+
+It is the stateful, managed, network firewall & intrusion detection and prevention service for your VPC.
+
+It checks the traffic flow from inbound & outbound.
+
+Security flow order::
+    order
+    1   Network Firewall    = Configure with VPC (next to internet gateway) Refer the architecture.(Based Priority ID)
+    2   NACL                = Configure with subnet level (Based Priority ID)
+    3   Security Groups     = Configure with AWS resource
+
+Here, we configure the edge associations, not subnet associations
+
+Order of Evalution (Network firewall rule groups)::
+    1   Stateless rule (It checks the stateless rules first, if it's not available, then it move to Stateful rules) if not traffic will denied.
+    2   Stateful rule
+
+    We can filter with specific IP, subnet range, Org IP, Domain name. (Allow/Deny the rule)
