@@ -1,0 +1,7 @@
+Use placement groups to influence the placement of a group of interdependant instances to meet the needs of your workload.
+
+There are three strategies:
+    1. Cluster Placement group
+    2. Spread Placement group
+    3. Partition Placement group
+

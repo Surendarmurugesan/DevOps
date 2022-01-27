@@ -1,0 +1,18 @@
+what are the purpose we using network interface in AWS ?
+
+    ENIs are virtual network cards you can attach to your EC2 instances. They are used to enable network connectivity for your instances, and 
+    Having more than one of them connected to your instance allows it to communicate on two different subnets.
+
+ENI presents with public and private IP.
+ENI has associated with Security group
+
+We create ENI in one AZ, we can associate with same AZ. Network Interface will not supported to attach for Another AZ & Region.
+
+Within same AZ for ENI & EC2, we can attach multiple ENI in single instance.
+
+To Monitor network flow:
+3. We can configure Flow logs in ENI (Ethernet Network Interface)
+2. We can configure Flow logs in Subnet
+1. We can configure Flow logs in VPC level
+TCP port number = 6
+UDP port number = 17

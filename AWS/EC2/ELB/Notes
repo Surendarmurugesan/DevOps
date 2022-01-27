@@ -1,0 +1,14 @@
+It's automatically distributes the traffic into mutiple targets such as
+    EC2 Instances
+    Container
+    IP address - (ENI - Network Interface)
+    Lambda functions
+
+It can handle the varying load of your application traffic in Single or across mutiple AZ. not region.
+
+Three types of Load balancer:
+    Application LB
+    Network LB
+    Classic LB
+
+It provides the high availability, Automatic scaling & Robust security.
