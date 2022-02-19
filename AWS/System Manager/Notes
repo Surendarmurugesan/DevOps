@@ -1,0 +1,35 @@
+System Manager:
+    AWS Quick Setup helps you configure frequently used AWS services and features across your organization with fewer clicks.
+    How it works:
+        1. Choose a Home Region -
+            Quick Setup creates the AWS resources used to deploy all of your configurations in the AWS Region you specify. The home Region can’t be changed once chosen.
+        2. Choose a configuration type -
+            Quick Setup provides a library of configuration types that automate common setup tasks and deploy configurations for services based on best practices.
+        3. Specify configuration options 
+        4. Deploy and review
+
+
+Session Manager:
+    Connect to your instances by starting a secure and auditable session.
+
+    Session Manager is a managed service that provides you with one-click secure access to your instances without the need to open inbound ports and manage bastion hosts. 
+    You have centralized access control over who can access your instances and full auditing capabilities to ensure compliance with corporate policies.
+
+    How it works:
+        1.Configure your instances to use Session Manager
+        2.Assign user IAM policies to control instance access
+        3.Specify account options for session logs.
+        4.Start a session on your instances by launching bash or shell terminal
+
+    Why use Session Manager:
+        Improved security posture -
+            Avoid the need to set up or maintain bastion hosts, to open up inbound SSH or remote PowerShell ports, or to provision or manage SSH keys and certificates.
+
+        Centralized access control -
+            Grant and revoke access control to instances from one location using AWS Identity and Access Management (IAM).
+
+        Detailed audit records -
+            Quickly view audit trails of user access to machines. Review session logs to debug or troubleshoot the actions performed on an instance during a session.
+
+        Cross-platform and VPC support -
+            Enjoy one-click access to Windows and Linux instances, and integration with AWS PrivateLink for access instances without public IP addresses.

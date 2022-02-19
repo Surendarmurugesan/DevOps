@@ -1,0 +1,8 @@
+Filesystem purposes:
+    /dev = Attached Devices
+    /etc , /var = Applicatins
+    /usr/bin = Commands
+
+Different types of filesystems:
+    Linux   = ext3, ext4, XFS, FAT
+    Windows = NTFS (New Technology Filesystem)
