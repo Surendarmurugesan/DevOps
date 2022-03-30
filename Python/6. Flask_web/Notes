@@ -1,0 +1,20 @@
+
+
+
+@appli.route("/<name>")
+    def user(name):
+        return f"Hello {name}"
+
+## For loop
+{% for x in content %}
+    <p>Hey {{x}}, Welcome</p>
+{% endfor %}
+
+## IF statement
+{% if x%2 == 1 %}
+    <p>...</p>
+{% elif %}
+    <p>...</p>
+{% else %}
+    <p>...</p>
+{% endif %}

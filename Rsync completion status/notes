@@ -1,0 +1,85 @@
+Initial rsync completed assurance:
+
+cat des_rsync.ofs-us-west-1.log | grep -A1 2ffb4451-0b73-4cd5-927e-8195f7286d4f
+
+    -A NUM, --after-context=NUM
+        Print NUM lines of trailing context after matching lines.  Places a line containing -- between contiguous groups of matches.
+    -B NUM, --before-context=NUM
+        Print NUM lines of leading context before matching lines.  Places a line containing -- between contiguous groups of matches.
+    -C NUM, --context=NUM
+        Print NUM lines of output context.  Places a line containing -- between contiguous groups of matches.
+
+
+[ec2-user@ip-10-71-4-97:~]$ ps -ef | grep [r]sync
+root      9097  9074  0 11:54 ?        00:00:00 flock -n /var/lock/des_rsync_aps2_con.lock /etc/designer-scripts/concurrent_rsync.sh /ofs-ap-southeast-2 /mnt/ofs DAS-E4-USW9-DEVOPS
+root      9101  9097  0 11:54 ?        00:01:21 /bin/sh /etc/designer-scripts/concurrent_rsync.sh /ofs-ap-southeast-2 /mnt/ofs DAS-E4-USW9-DEVOPS
+root      9103  9075  0 11:54 ?        00:00:00 flock -n /var/lock/des_rsync_euw1_con.lock /etc/designer-scripts/concurrent_rsync.sh /ofs-eu-west-1 /mnt/ofs DAS-E4-USW9-DEVOPS
+root      9104  9092  0 11:54 ?        00:00:00 flock -n /var/lock/des_rsync_usw1_con.lock /etc/designer-scripts/concurrent_rsync.sh /ofs-us-west-1 /mnt/ofs DAS-E4-USW9-DEVOPS
+root      9110  9103  0 11:54 ?        00:01:22 /bin/sh /etc/designer-scripts/concurrent_rsync.sh /ofs-eu-west-1 /mnt/ofs DAS-E4-USW9-DEVOPS
+root      9120  9104  0 11:54 ?        00:01:22 /bin/sh /etc/designer-scripts/concurrent_rsync.sh /ofs-us-west-1 /mnt/ofs DAS-E4-USW9-DEVOPS
+root     22311  9110  0 16:40 ?        00:00:00 /bin/sh /etc/designer-scripts/concurrent_rsync.sh /ofs-eu-west-1 /mnt/ofs DAS-E4-USW9-DEVOPS
+root     22314  9120  0 16:40 ?        00:00:00 /bin/sh /etc/designer-scripts/concurrent_rsync.sh /ofs-us-west-1 /mnt/ofs DAS-E4-USW9-DEVOPS
+
+echo "*/3 * * * * root /etc/designer-scripts/data_status_check.sh" > /etc/cron.d/des_rsync_status_check
+
+sudo /ofs-us-west-1/designer/completed_rsync.sh DAS-E4-USW9-DEVOPS E4-USW9-DEVOPS
+
+echo "us-west:" >> sample
+
+## Attempt 5
+
+if [ ! -f /mnt/ofs/intial_sync_completed ] ; then
+    while [ `ps -ef | grep -c [r]sync` -ne 0 ]
+    do
+        echo "Waiting..."
+    done
+    echo "Rsync completed" > /mnt/ofs/intial_sync_completed
+fi
+
+
+## Attempt 4
+if [ ! -f /home/ec2-user/intial_sync_completed_time ] ; then
+    while [ `ps -ef | grep -c [r]sync` -ne 0 ]
+    do
+        echo "Waiting..."
+    done
+    timestamp="$(date +%s)"
+    echo "$timestamp" > /home/ec2-user/intial_sync_completed_time
+    echo "File created"
+else
+    echo "Already file has created"
+fi
+
+
+## Attempt 3
+num=5
+if [ $num -eq 5 ] ; then
+    while [ `ps -ef | grep -c [r]sync` -ne 0 ]
+    do
+        echo "Waiting..."
+    done
+    touch /home/ec2-user/test.js
+    echo "File executed"
+fi
+
+
+## Attempt 2
+num=5
+if [ $num -eq 5 ] ; then
+while [ `ps -ef | grep -c [r]sync` -eq 0 ]
+do
+    touch /home/ec2-user/test.js
+    echo "while executed"
+done
+echo "if executed"
+fi
+echo "IF condition failed"
+
+
+## Attempt 1
+if [ -f /home/ec2-user/sample ];
+then
+        echo "true"
+else
+        echo "false"
+fi
