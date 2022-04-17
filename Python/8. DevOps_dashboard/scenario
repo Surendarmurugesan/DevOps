@@ -1,0 +1,4 @@
+Dashboard::
+At first level of troubleshoot to track our environments.
+    Web dashboard(Flask)
+    Get environment details for troubleshooting
