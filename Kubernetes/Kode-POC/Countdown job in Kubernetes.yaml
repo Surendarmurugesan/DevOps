@@ -2,28 +2,26 @@
 # but for now they are preparing the templates and testing the jobs with dummy commands. Please create a job template as per details 
 # given below.
 
-# Create a job countdown-xfusion.
+# Create a job countdown-datacenter.
 
-# The spec template should be named as countdown-xfusion (under metadata), and the container should be named as container-countdown-xfusion
+# The spec template should be named as countdown-datacenter (under metadata), and the container should be named as container-countdown-datacenter
 
 # Use image ubuntu with latest tag only and remember to mention tag i.e ubuntu:latest, and restart policy should be Never.
 
 # Use command for i in ten nine eight seven six five four three two one ; do echo $i ; done
 
-Task failed : spec template is not named as 'countdown-xfusion'
-
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: countdown-xfusion
+  name: countdown-datacenter
 spec:
   template:
     metadata:
-      name: countdown-xfusion
+      name: countdown-datacenter
     spec:
       containers:
-      - name: container-countdown-xfusion
-        image: debian:latest
-        command: ["/bin/sh", "-c", "for i in 10 9 8 7 6 5 4 3 2 1 ; do echo $i ; done"]
+      - name: container-countdown-datacenter
+        image: ubuntu:latest
+        command: ["/bin/sh", "-c", "for i in ten nine eight seven six five four three two one ; do echo $i ; done"]
       restartPolicy: Never
