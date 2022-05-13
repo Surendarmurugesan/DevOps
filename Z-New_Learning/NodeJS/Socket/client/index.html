@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+    </head>
+    <body>
+        <h1>Welcome to sockets</h1>
+        <div>
+            <input type="text" id="txtChat" placeholder="Enter Your chat message">
+        </div>
+        <br>
+        <div>
+            <button id="btnSendChat">Send Message</button>
+        </div>
+        <br>
+        <button id="btnDisconnect">Disconnect Sockets</button>
+        <br>
+        <ul id="listMessages">
+            <li></li>
+        </ul>
+        <script>
+            const textChat =  document.getElementById('txtChat');
+            const btnDisconnect = document.getElementById('btnDisconnect');
+            const btnSendChat = document.getElementById('btnSendChat');
+            const listMessages = document.getElementById('listMessages');
+           const socket = io();
+
+           socket.on("Welcome",(data)=>{
+                console.log(data);
+           });
+           socket.on("groupMessage",(data)=>{
+                console.log(data);
+                let liTag = document.createElement("li");
+                liTag.textContent=data;
+                listMessages.appendChild(liTag)
+           });
+           btnDisconnect.addEventListener('click',()=>{
+               socket.disconnect();
+           });
+           btnSendChat.addEventListener('click',()=>{
+             socket.emit("chat",textChat.value);
+           })
+        </script>
+    </body>
+</html>
