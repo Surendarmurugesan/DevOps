@@ -1,0 +1,34 @@
+# Create a pod named volume-share-nautilus.
+
+# For the first container, use image centos with latest tag only and remember to mention the tag i.e centos:latest, container should be named as volume-container-nautilus-1, and run a sleep command for it so that it remains in running state. Volume volume-share should be mounted at path /tmp/ecommerce.
+
+# For the second container, use image centos with the latest tag only and remember to mention the tag i.e centos:latest, container should be named as volume-container-nautilus-2, and again run a sleep command for it so that it remains in running state. Volume volume-share should be mounted at path /tmp/apps.
+
+# Volume name should be volume-share of type emptyDir.
+
+# After creating the pod, exec into the first container i.e volume-container-nautilus-1, and just for testing create a file ecommerce.txt with any content under the mounted path of first container i.e /tmp/ecommerce.
+
+# The file ecommerce.txt should be present under the mounted path /tmp/apps on the second container volume-container-nautilus-2 as well, since they are using a shared volume.
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-share-nautilus
+spec:
+  containers:
+  - name: volume-container-nautilus-1
+    image: fedora:latest
+    command: ["/bin/bash", -c, sleep 10000]
+    volumeMounts:
+      - name: volume-share
+        mountPath: /tmp/beta
+  - name: volume-container-nautilus-2
+    image: fedora:latest
+    command: ["/bin/bash", -c, sleep 10000]
+    volumeMounts:
+      - name: volume-share
+        mountPath: /tmp/cluster
+  volumes:
+  - name: volume-share
+    emptyDir: {}
