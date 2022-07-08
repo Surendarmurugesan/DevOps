@@ -1,0 +1,87 @@
+---
+apiVersion: v1 
+kind: PersistentVolume            
+metadata:
+  name: pv-designer
+  namespace: designer
+spec:     
+  capacity:
+    storage: 5Gi
+  accessModes: 
+    - ReadWriteMany
+  nfs:                       
+    path: "/des_fileshare"
+    server: 10.254.0.18
+
+---    
+apiVersion: v1 
+kind: PersistentVolumeClaim 
+metadata:                          
+  name: pvc-designer
+  namespace: designer
+spec:                                  
+  accessModes:
+  - ReadWriteMany                
+  resources:
+    requests: 
+      storage: 1Gi
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: instance-disk
+  namespace: designer
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: disk-premium
+
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: pod-designer
+  namespace: designer
+  labels:
+    app: web
+spec:
+  securityContext:
+    runAsUser: 1000    
+    runAsGroup: 1000
+    fsGroup: 1000    
+  containers:
+  - name: container-designer
+    image: ubuntu
+    command: ["/bin/sh", "-c", sleep 10000]
+    volumeMounts:
+    - name: volume
+      mountPath: /tmp
+    - name: instance-storage
+      mountPath: /mnt
+  volumes:
+  - name: volume
+    persistentVolumeClaim:
+      claimName: pvc-designer
+  - name: instance-storage
+    persistentVolumeClaim:
+      claimName: instance-disk
+
+---
+apiVersion: v1
+kind: Service        
+metadata:
+  name: web-designer
+  namespace: designer
+  labels:
+    app: web
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: 80
+      port: 80
+  selector:
+    app: web
