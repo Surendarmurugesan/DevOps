@@ -1,0 +1,149 @@
+
+terraform plan::
+
+resource "kubernetes_manifest" "mapping" {
+      + manifest = {
+          + apiVersion = "getambassador.io/v3alpha1"
+          + kind       = "Mapping"
+          + metadata   = {
+              + name      = "designer-ambassador-lb"
+              + namespace = "designer"
+            }
+          + spec       = {
+              + hostname   = "designer.api01-uswest2.dev.gengcp.com"
+              + prefix     = "/"
+              + service    = "http://designer-green.designer:8888"
+              + timeout_ms = "50000"
+            }
+        }
+      + object   = {
+          + apiVersion = "getambassador.io/v3alpha1"
+          + kind       = "Mapping"
+          + metadata   = {
+              + annotations                = (known after apply)
+              + clusterName                = (known after apply)
+              + creationTimestamp          = (known after apply)
+              + deletionGracePeriodSeconds = (known after apply)
+              + deletionTimestamp          = (known after apply)
+              + finalizers                 = (known after apply)
+              + generateName               = (known after apply)
+              + generation                 = (known after apply)
+              + labels                     = (known after apply)
+              + managedFields              = (known after apply)
+              + name                       = "designer-ambassador-lb"
+              + namespace                  = "designer"
+              + ownerReferences            = (known after apply)
+              + resourceVersion            = (known after apply)
+              + selfLink                   = (known after apply)
+              + uid                        = (known after apply)
+            }
+          + spec       = {
+              + add_linkerd_headers                = (known after apply)
+              + add_request_headers                = (known after apply)
+              + add_response_headers               = (known after apply)
+              + allow_upgrade                      = (known after apply)
+              + ambassador_id                      = (known after apply)
+              + auth_context_extensions            = (known after apply)
+              + auto_host_rewrite                  = (known after apply)
+              + bypass_auth                        = (known after apply)
+              + bypass_error_response_overrides    = (known after apply)
+              + case_sensitive                     = (known after apply)
+              + circuit_breakers                   = (known after apply)
+              + cluster_idle_timeout_ms            = (known after apply)
+              + cluster_max_connection_lifetime_ms = (known after apply)
+              + cluster_tag                        = (known after apply)
+              + connect_timeout_ms                 = (known after apply)
+              + cors                               = {
+                  + credentials             = (known after apply)
+                  + exposed_headers         = (known after apply)
+                  + headers                 = (known after apply)
+                  + max_age                 = (known after apply)
+                  + methods                 = (known after apply)
+                  + origins                 = (known after apply)
+                  + v2CommaSeparatedOrigins = (known after apply)
+                }
+              + dns_type                           = (known after apply)
+              + docs                               = {
+                  + display_name = (known after apply)
+                  + ignored      = (known after apply)
+                  + path         = (known after apply)
+                  + timeout_ms   = (known after apply)
+                  + url          = (known after apply)
+                }
+              + enable_ipv4                        = (known after apply)
+              + enable_ipv6                        = (known after apply)
+              + envoy_override                     = (known after apply)
+              + error_response_overrides           = (known after apply)
+              + grpc                               = (known after apply)
+              + headers                            = (known after apply)
+              + host                               = (known after apply)
+              + host_redirect                      = (known after apply)
+              + host_regex                         = (known after apply)
+              + host_rewrite                       = (known after apply)
+              + hostname                           = "designer.api01-uswest2.dev.gengcp.com"
+              + idle_timeout_ms                    = (known after apply)
+              + keepalive                          = {
+                  + idle_time = (known after apply)
+                  + interval  = (known after apply)
+                  + probes    = (known after apply)
+                }
+              + labels                             = (known after apply)
+              + load_balancer                      = {
+                  + cookie    = {
+                      + name = (known after apply)
+                      + path = (known after apply)
+                      + ttl  = (known after apply)
+                    }
+                  + header    = (known after apply)
+                  + policy    = (known after apply)
+                  + source_ip = (known after apply)
+                }
+              + method                             = (known after apply)
+              + method_regex                       = (known after apply)
+              + modules                            = (known after apply)
+              + outlier_detection                  = (known after apply)
+              + path_redirect                      = (known after apply)
+              + precedence                         = (known after apply)
+              + prefix                             = "/"
+              + prefix_exact                       = (known after apply)
+              + prefix_redirect                    = (known after apply)
+              + prefix_regex                       = (known after apply)
+              + priority                           = (known after apply)
+              + query_parameters                   = (known after apply)
+              + redirect_response_code             = (known after apply)
+              + regex_headers                      = (known after apply)
+              + regex_query_parameters             = (known after apply)
+              + regex_redirect                     = {
+                  + pattern      = (known after apply)
+                  + substitution = (known after apply)
+                }
+              + regex_rewrite                      = {
+                  + pattern      = (known after apply)
+                  + substitution = (known after apply)
+                }
+              + remove_request_headers             = (known after apply)
+              + remove_response_headers            = (known after apply)
+              + resolver                           = (known after apply)
+              + respect_dns_ttl                    = (known after apply)
+              + retry_policy                       = {
+                  + num_retries     = (known after apply)
+                  + per_try_timeout = (known after apply)
+                  + retry_on        = (known after apply)
+                }
+              + rewrite                            = (known after apply)
+              + service                            = "http://designer-green.designer:8888"
+              + shadow                             = (known after apply)
+              + stats_name                         = (known after apply)
+              + timeout_ms                         = 50000
+              + tls                                = (known after apply)
+              + use_websocket                      = (known after apply)
+              + v2BoolHeaders                      = (known after apply)
+              + v2BoolQueryParameters              = (known after apply)
+              + v2ExplicitTLS                      = {
+                  + serviceScheme = (known after apply)
+                  + tls           = (known after apply)
+                }
+              + weight                             = (known after apply)
+            }
+        }
+    }

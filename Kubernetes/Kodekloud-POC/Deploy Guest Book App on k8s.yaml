@@ -1,5 +1,5 @@
 #Deploy Guest Book App on Kubernetes
-
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,7 +15,7 @@ spec:
         app: backend-master
     spec:
      containers:
-     - name: master-redis-devops
+     - name: master-redis-xfusion
        image:  redis
        resources:
          requests:
@@ -24,6 +24,7 @@ spec:
        ports:
        - containerPort: 6379
 
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -36,6 +37,7 @@ spec:
       protocol: TCP
       targetPort: 6379
 
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -51,7 +53,7 @@ spec:
         app: backend-slave
     spec:
      containers:
-     - name: slave-redis-devops
+     - name: slave-redis-xfusion
        image: gcr.io/google_samples/gb-redisslave:v3 
        resources:
          requests:
@@ -63,6 +65,7 @@ spec:
        ports:
        - containerPort: 6379
 
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -74,6 +77,7 @@ spec:
     - port: 6379
       protocol: TCP
 
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -89,7 +93,7 @@ spec:
         app: frontend-redis
     spec:
      containers:
-     - name: php-redis-devops
+     - name: php-redis-xfusion
        image: gcr.io/google-samples/gb-frontend:v4
        resources:
          requests:
@@ -101,6 +105,7 @@ spec:
        ports:
        - containerPort: 80
 
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -113,12 +118,3 @@ spec:
     - protocol: TCP
       port: 80
       nodePort: 30009
-
-
-
-
-
-
-
-
-
