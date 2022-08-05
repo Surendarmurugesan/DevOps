@@ -1,0 +1,15 @@
+---
+apiVersion: getambassador.io/v3alpha1
+kind: "Mapping"
+metadata:
+  name: "designer-test"
+  namespace: "designer"
+  labels:
+    service: designer
+    servicename: designer
+    tenant: shared  
+spec:
+  hostname: amb-designer.westus2.dev.example.com
+  prefix: /
+  service: http://designer-blue.designer:8888
+  timeout_ms: 50000
