@@ -1,33 +1,39 @@
-POC's from 2018 to till now.(All in one place)
-DevOps Confluence page:
+# POC's from 2018 to till now.(All in one place)
+# DevOps Confluence page:
+
 https://docs.google.com/spreadsheets/d/1eAXsPDLJdHLNbO92NVTsFH7baPW-wIrOrvd3sikSlfk/edit#gid=753802241
 
-Cloud Platform:
+# Cloud Platform:
 * AWS
 * Azure
 * GCP
 
-Infrastructure as code:
+# Infrastructure as code:
 * CloudFormation
 * Terraform
 
-Scripting:
+# Scripting:
 * Python
 * Linux- Shell scripting
   
-Containers/orchestration:
+# Containers/orchestration:
+* Kubernetes
 * Docker
 * Docker-compose
-* Kubernetes
 * Openshift
 * Helm charts
 * Istio - service mesh
 
-CI/CD:
+# CI/CD:
 * Jenkins
-* Maven
-* SCM: (Source Code Management) Git/Bitbucket
+* GitHub Actions
 
-Monitoring:
+# Build:
+* Maven
+
+# SCM: (Source Code Management) 
+* GitHub/Bitbucket
+
+# Monitoring:
 * Prometheus
 * Grafana
