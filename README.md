@@ -32,8 +32,10 @@ https://docs.google.com/spreadsheets/d/1eAXsPDLJdHLNbO92NVTsFH7baPW-wIrOrvd3sikS
 * Maven
 
 # SCM: (Source Code Management) 
-* GitHub/Bitbucket
+* GitHub
+* Bitbucket
 
 # Monitoring:
 * Prometheus
 * Grafana
+
