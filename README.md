@@ -12,11 +12,7 @@ https://docs.google.com/spreadsheets/d/1eAXsPDLJdHLNbO92NVTsFH7baPW-wIrOrvd3sikS
 * CloudFormation
 * Terraform
 
-# Scripting:
-* Python
-* Linux- Shell scripting
-  
-# Containers/orchestration:
+# Deployment - Containers/Orchestration:
 * Kubernetes
 * Docker
 * Docker-compose
@@ -27,6 +23,10 @@ https://docs.google.com/spreadsheets/d/1eAXsPDLJdHLNbO92NVTsFH7baPW-wIrOrvd3sikS
 # CI/CD:
 * Jenkins
 * GitHub Actions
+
+# Scripting:
+* Python
+* Linux- Shell scripting
 
 # Build:
 * Maven
