@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hello
+spec:
+  completions: 3
+  parallelism: 3
+  ttlSecondsAfterFinished: 10
+  template:
+    spec:
+      containers:
+      - name: hello
+        image: busybox:1.28
+        command: ["/bin/sh", "-c","date; echo Hello from the Kubernetes cluster; sleep 50"]
+      restartPolicy: Never
+  backoffLimit: 4
