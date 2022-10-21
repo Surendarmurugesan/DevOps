@@ -8,9 +8,11 @@ jobs:
     steps:
       - name: echo a string
         run: echo "Hello World !!"
-      - name: Check the node, npm version
+
+      - name: Check the node & npm version (Multiline script)
         run: |
           node -v
           npm -v
+
       - name: Check the os version
         run: cat /etc/os-release
