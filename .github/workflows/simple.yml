@@ -1,0 +1,18 @@
+name: Try to execute shell commands using github actions.
+
+on: [push, pull_request]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "Hello World !!"
+      
+      - name: Check the node & npm version
+        run: |
+          node -v
+          npm -v
+
+      - name: Check the OS version
+        run: cat /etc/os-release
