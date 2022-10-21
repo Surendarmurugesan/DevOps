@@ -13,6 +13,7 @@ jobs:
         run: |
           node -v
           npm -v
+          python -V
 
       - name: Check the os version
         run: cat /etc/os-release
