@@ -29,6 +29,6 @@ jobs:
     steps:
       - name: Directory Location
         run: Get-Location
-      - name: Directory Bash
+      - name: Bash cmd in windows vm
         run: pwd
         shell: bash
