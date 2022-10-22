@@ -1,8 +1,12 @@
 name: Actions workflow
 
 # Try to execute with pull_request
-on: [pull_request]
-
+on: 
+  schedule:
+    - cron: "1 * * * *"
+  pull_request:
+    types: [closed, assigned, opened, reopened]
+    
 jobs:
   run-action-workflow:
     runs-on: ubuntu-latest
