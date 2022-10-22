@@ -6,6 +6,10 @@ jobs:
   run-action-workflow:
     runs-on: ubuntu-latest
     steps:
+      - name: List files
+        run: |
+          pwd
+          ls
       - name: Simple JS action
         id: greet
         uses: actions/hello-world-javascript-action@main
