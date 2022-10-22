@@ -12,9 +12,6 @@ jobs:
           ls -a
       - name: Checkout
         uses: actions/checkout@main
-        run: |
-          pwd
-          ls -a
       - name: After checkout listing files
         run: |
           pwd
