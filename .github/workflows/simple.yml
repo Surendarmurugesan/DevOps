@@ -1,6 +1,6 @@
 name: Try to execute shell commands using github actions.
 
-on: [pull_request]
+on: [push]
 
 jobs:
   run-shell-command:
@@ -9,7 +9,13 @@ jobs:
     steps:
       - name: echo a string
         run: echo "Hello World !!"
-
+      - name: dump
+        run: |
+          echo ${{ contains( 'Suren', 'ur' ) }}
+          echo ${{ startswith( 'Suren', 'Su' ) }}
+          echo ${{ endswith( 'Suren', 'en' ) }}
+          echo ${{ format( 'Hello {0} {1} {2}', 'Surendar', 'welcome', '!', '!' ) }}
+          
       - name: Check the node & npm version (Multiline script)
         run: |
           node -v
