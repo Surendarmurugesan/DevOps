@@ -1,14 +1,17 @@
 name: Actions workflow
 
 # Try to execute with pull_request
-on: 
+on:
+  # label:
+  #   types:
+  #     - created
   push:
-    # branches:
-    #   - "develop"
+    branches:
+      - "master"
     # tags:
     #   - v1.*
-    paths:
-      - '**.md'
+    # paths:
+    #   - '**.md'
   # schedule:
   #   - cron: "0/5 * * * *"
   # pull_request:
