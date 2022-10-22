@@ -14,8 +14,8 @@ jobs:
           echo ${{ contains( 'Suren', 'ur' ) }}
           echo ${{ startswith( 'Suren', 'Su' ) }}
           echo ${{ endswith( 'Suren', 'en' ) }}
-          echo ${{ format( 'Hello {0} {1} {2}', 'Surendar', 'welcome', '!', '!' ) }}
-          
+          echo ${{ format( 'Hello {0} {1} {2} {3}', 'Surendar', 'welcome', '!', '!' ) }}
+
       - name: Check the node & npm version (Multiline script)
         run: |
           node -v

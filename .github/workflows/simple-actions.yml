@@ -1,13 +1,13 @@
 name: Actions workflow
 
 # Try to execute with pull_request
-on:
+on: [pull_request]
   # label:
   #   types:
   #     - created
-  push:
-    branches:
-      - "master"
+  # push:
+  #   branches:
+  #     - "master"
     # tags:
     #   - v1.*
     # paths:
