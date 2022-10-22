@@ -23,6 +23,7 @@ https://docs.google.com/spreadsheets/d/1eAXsPDLJdHLNbO92NVTsFH7baPW-wIrOrvd3sikS
 # CI/CD:
 * Jenkins
 * GitHub Actions
+* GitLab
 
 # Scripting:
 * Python
@@ -38,4 +39,5 @@ https://docs.google.com/spreadsheets/d/1eAXsPDLJdHLNbO92NVTsFH7baPW-wIrOrvd3sikS
 # Monitoring:
 * Prometheus
 * Grafana
+* Datadog
 
