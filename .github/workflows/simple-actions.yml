@@ -3,8 +3,12 @@ name: Actions workflow
 # Try to execute with pull_request
 on: 
   push:
-    branches:
-      - "develop"
+    # branches:
+    #   - "develop"
+    # tags:
+    #   - v1.*
+    paths:
+      - '**.md'
   # schedule:
   #   - cron: "0/5 * * * *"
   # pull_request:
