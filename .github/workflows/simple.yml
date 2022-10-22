@@ -1,6 +1,6 @@
 name: Try to execute shell commands using github actions.
 
-on: [push]
+on: [pull_request]
 
 jobs:
   run-shell-command:
