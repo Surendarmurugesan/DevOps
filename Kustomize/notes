@@ -1,0 +1,11 @@
+Kustomize commands::
+
+It doesn't have apply/destroy config command.
+kustomize build command:
+kustomize build k8s/
+
+Kustomize build, apply & delete::
+kubectl build k8s/ | kubectl apply -f -
+kubectl delete -k k8s/
+
+-k = kustomize

@@ -9,8 +9,8 @@ https://docs.google.com/spreadsheets/d/1eAXsPDLJdHLNbO92NVTsFH7baPW-wIrOrvd3sikS
 * GCP
 
 # Infrastructure as code:
-* CloudFormation
 * Terraform
+* CloudFormation
 
 # Deployment - Containers/Orchestration:
 * Kubernetes
