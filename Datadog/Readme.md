@@ -22,6 +22,22 @@
     3. Traverse
     4. Retrace
 
+# What does Datadog can monitor?
+* Infrastructure
+* Log Management
+* APM & Continuous profiler
+* Database monitoring
+* Synthetic Monitoring
+* Incident management
+* Real User monitoring
+* CI visibility
+* Severless
+* Network Monitoring
+* Cloud SIEM
+* CSPM
+* Sensitive Data Scanner
+* Workload security
+
 
 
         
