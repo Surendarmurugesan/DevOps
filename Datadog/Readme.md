@@ -2,6 +2,7 @@
 It collects the Metrics, Logs, Traces, Events. 
 ### (Everything in One Place)
 
+
 #   APM (Application performance management):: 
 The translation of IT metrics into business meaning. A practice to monitor application insights, so we can:
 1. Improve application/Infra/etc.. performance (Frontend app, Backend app, Infrastructure)
@@ -50,10 +51,18 @@ There are multiple ways of sending the data to Datadog::
 * After installation, Sending the **data** from server to **Datadog**. (**Metrics, Events, Logs, Traces**)
 * Using **Datadog Dashboard**, Able to use the data in **Alerts & Queries**.
 
+# Monitoring key focus:
 It prevents all replication for incidents and system failures. Managing and Maintaining the key aspects::
 * **Availability**
 * **Reliability**
 * **Scalability**
 * **Duration**
 
-        
+# What do I use Datadog ?
+* To write easy and fast query on **traces/logs/metrics**.
+* To monitor **Server/Host downtime**
+* To monitor **Application/Services downtime**
+* Service request/response **error rates**
+* Service request/response **latency**
+* SQL queries **duration**
+* SLO(**Service Level Objectives**)'s like success requests/ total requests, duration/requests.
