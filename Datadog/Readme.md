@@ -17,10 +17,10 @@ The translation of IT metrics into business meaning. A practice to monitor appli
 6. Code-level diagnostics
         
 # Alternative Top APM tools apart from DATADOG ::
-    1. New Relic
-    2. Loupe
-    3. Traverse
-    4. Retrace
+1. New Relic
+2. Loupe
+3. Traverse
+4. Retrace
 
 # What does Datadog can monitor?
 * Infrastructure
