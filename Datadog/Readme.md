@@ -43,6 +43,10 @@ There are multiple ways of sending the data to Datadog::
 * Using Datadog API
 * Integrations
 
+# How does Datadog works ??
 
+* Download & Install Datadog agent in your *Destination Host* servers.
+* After installation, Sending the *data* from server to *Datadog*. (*Metrics, Events, Logs, Traces*)
+* Using *Datadog Dashboard*, Able to use the data in *Alerts & Queries*. 
 
         
