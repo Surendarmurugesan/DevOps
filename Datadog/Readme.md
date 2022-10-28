@@ -1,5 +1,6 @@
 # Datadog
-It collects the Metrics, Logs, Traces, Events. **Everything in One Place**.
+It collects the Metrics, Logs, Traces, Events. 
+### (Everything in One Place)
 
 #   APM (Application performance management):: 
     The translation of IT metrics into business meaning. A practice to monitor application insights, so we can:
