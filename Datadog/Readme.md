@@ -1,8 +1,8 @@
-Datadog
+# Datadog
 
     It collects the Metrics, Logs, Traces, Events.
 
-    APM (Application performance management):: 
+#   APM (Application performance management):: 
     The translation of IT metrics into business meaning. A practice to monitor application insights, so we can:
         1. Improve application/Infra/etc.. performance (Frontend app, Backend app, Infrastructure)
         2. Improve user experience
@@ -16,7 +16,7 @@ Datadog
             5. Tracks individual SQL statements
             6. Code-level diagnostics
         
-Alternative Top APM tools apart from DATADOG ::
+# Alternative Top APM tools apart from DATADOG ::
     1. New Relic
     2. Loupe
     3. Traverse
