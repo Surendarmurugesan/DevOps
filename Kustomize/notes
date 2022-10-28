@@ -9,3 +9,24 @@ kubectl build k8s/ | kubectl apply -f -
 kubectl delete -k k8s/
 
 -k = kustomize
+
+Managing directories::
+
+k8s/
+├── api
+│   ├── api-deploy.yaml
+│   ├── api-service.yaml
+│   └── kustomization.yaml
+├── cache
+│   ├── cache-deploy.yaml
+│   ├── cache-service.yaml
+│   └── kustomization.yaml
+├── db
+│   ├── db-deploy.yaml
+│   ├── db-service.yaml
+│   └── kustomization.yaml
+├── kafka
+│   ├── kafka-deploy.yaml
+│   ├── kafka-service.yaml
+│   └── kustomization.yaml
+└── kustomization.yaml
