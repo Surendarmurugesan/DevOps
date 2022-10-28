@@ -1,5 +1,5 @@
 # Datadog
-It collects the Metrics, Logs, Traces, Events.
+It collects the Metrics, Logs, Traces, Events. **Everything in One Place**.
 
 #   APM (Application performance management):: 
     The translation of IT metrics into business meaning. A practice to monitor application insights, so we can:
@@ -45,8 +45,8 @@ There are multiple ways of sending the data to Datadog::
 
 # How does Datadog works ??
 
-* Download & Install Datadog agent in your *Destination Host* servers.
-* After installation, Sending the *data* from server to *Datadog*. (*Metrics, Events, Logs, Traces*)
-* Using *Datadog Dashboard*, Able to use the data in *Alerts & Queries*. 
+* Download & Install Datadog agent in your **Destination Host** servers.
+* After installation, Sending the **data** from server to **Datadog**. (**Metrics, Events, Logs, Traces**)
+* Using **Datadog Dashboard**, Able to use the data in **Alerts & Queries**. 
 
         
