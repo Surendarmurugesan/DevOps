@@ -1,6 +1,5 @@
 # Datadog
-
-    It collects the Metrics, Logs, Traces, Events.
+It collects the Metrics, Logs, Traces, Events.
 
 #   APM (Application performance management):: 
     The translation of IT metrics into business meaning. A practice to monitor application insights, so we can:
@@ -37,6 +36,12 @@
 * CSPM
 * Sensitive Data Scanner
 * Workload security
+
+# How does Datadog collects data ??
+There are multiple ways of sending the data to Datadog::
+* From Datadog Agent
+* Using Datadog API
+* Integrations
 
 
 
