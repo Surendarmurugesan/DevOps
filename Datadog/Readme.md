@@ -75,5 +75,6 @@ Datadog agent acts like a **middle layer** between your application and datadog 
 There are two main components:
 * **Collector**- Which collects data from your host on every 15 seconds.
 * **Forwarder**- Which sends data to Datadog over https.
+![image](https://user-images.githubusercontent.com/53648189/198812525-708b8508-ffda-4650-b6a3-d8b1bf87c9d3.png)
 
-image.png
+
