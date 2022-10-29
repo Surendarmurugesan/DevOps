@@ -66,3 +66,14 @@ It prevents all replication for incidents and system failures. Managing and Main
 * Service request/response **latency**
 * SQL queries **duration**
 * SLO(**Service Level Objectives**)'s like success requests/ total requests, duration/requests.
+
+# How Datadog agent works?
+Datadog agent is software that runs on your hosts. After installation, it automatically starts to collect events and metrics from hosts and sends them to Datadog, where you can search, filter, aggregate and alert on information.
+
+Datadog agent acts like a **middle layer** between your application and datadog website.
+
+There are two main components:
+* **Collector**- Which collects data from your host on every 15 seconds.
+* **Forwarder**- Which sends data to Datadog over https.
+
+image.png
