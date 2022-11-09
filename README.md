@@ -18,7 +18,8 @@ https://docs.google.com/spreadsheets/d/1eAXsPDLJdHLNbO92NVTsFH7baPW-wIrOrvd3sikS
 * Docker-compose
 * Openshift
 * Helm charts
-* Istio - service mesh
+* Kustomize
+* Istio - Service mesh
 
 # CI/CD:
 * Jenkins

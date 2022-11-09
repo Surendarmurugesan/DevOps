@@ -1,0 +1,12 @@
+Automate AWS ECS Service Restarts:
+Setup a job to do nightly recycle of our ECS Services deployed in ECS Fargate Cluster.
+
+Options available:
+1. We can use Lamda & EventBridge services for automate.
+2. AWS CLI = to achieve via Blue/Green Deployment experience.
+
+Steps:
+1. Create IAM Role & Policies >> 
+2. Create EventBridge Rule(Schedule) >> 
+3. Create Lamda function to update "Python Service-restart script(ecs_service_restart.py)" >> 
+4. Add Lamda as "EventBridge Rule" as Target.
