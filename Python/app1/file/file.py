@@ -2,13 +2,28 @@ todos = []
 
 while True:
     user_action = input("Type add, show, edit, complete or exit: ")
-    user_action = user_action.strip()  ## To remove extra spaces, "add "
+    user_action = user_action.strip()  ## To remove extra spaces, example: "add "
     match user_action:
         case 'add':
-            user_input = input("Enter a todos: ")
-            todos.append(user_input)
+            todo = input("Enter a todo: ") + "\n"
+
+            file = open('todos.txt', 'r')  ## "open" is for read or write the file
+            todos = file.readlines()
+            file.close()
+
+            todos.append(todo)
+
+            file = open('todos.txt', 'w')
+            file.writelines(todos)
+            file.close()
         case 'show':
-            for index, item in enumerate(todos):
+            file = open('todos.txt', 'r')
+            todos = file.readlines()
+            file.close()
+
+            new_todos = [item.strip('\n') for item in todos]  ## list comprehensions
+
+            for index, item in enumerate(new_todos):
                 print(f"{index + 1}.{item}")
         case 'edit':
             number = int(input("Number of todo to edit: "))
