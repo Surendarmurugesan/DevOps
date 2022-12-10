@@ -22,7 +22,7 @@ with col2:
 content = """Below you can find some of the apps I have built in Python. Feel free to contact me!!"""
 st.write(content)
 
-col3, col4 = st.columns(2)
+col3, empty_col, col4 = st.columns([2, 0.5, 2])
 
 df = pandas.read_csv("data.csv", sep=";")
 
@@ -30,13 +30,14 @@ with col3:
     for index, row in df[:10].iterrows():
         st.header(row["title"])
         st.write(row["description"])
-        st.image(f"images/{index + 1}.png")
-
+        st.image(f"images/" + row["image"])
+        st.write(f"[Source code]({row['url']})")
 with col4:
     for index, row in df[10:].iterrows():
         st.header(row["title"])
         st.write(row["description"])
-        st.image(f"images/{index + 1}.png")
+        st.image(f"images/" + row["image"])
+        st.write(f"[Source code]({row['url']})")
 
 
 #     st.title("Todo App")
