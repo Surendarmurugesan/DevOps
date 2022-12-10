@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas
 
-st.markdown("# Home")
-st.sidebar.markdown("# Home")
-#st.set_page_config(layout="wide")
+# st.markdown("# Home")
+# st.sidebar.markdown("# Home")
+st.set_page_config(layout="wide")
 col1, col2 = st.columns(2)
 
 with col1:
@@ -13,7 +13,7 @@ with col2:
     st.title("Surendar Murugesan")
     content = """
     Hello, I am Surendar Murugesan! I am working as a DevOps Engineer. I graduated in 2017 with Bachelor's degree from Anna University.
-    I have worked with Genesys company in Chennai.
+    I have worked with Genesys company in Chennai.\n
     Four & Half years accomplished experience in Multi-cloud Administration, Orchestration, Infrastructure management, Automation,
     CI/CD, Monitoring and Architecting cloud infrastructure solutions.
     """
@@ -65,11 +65,11 @@ with col4:
 #     st.write(Analyzer_description)
 #     st.image("images/12.png")
 
-st.markdown("# Contact Us")
-st.sidebar.markdown("# Contact Us")
-
-st.text_input('Your email address', '')
-st.text_input('Your message', '')
-
-st.button("Submit")
-# left_column.button('Submit')
+# st.markdown("# Contact Us")
+# st.sidebar.markdown("# Contact Us")
+#
+# st.text_input('Your email address', '')
+# st.text_input('Your message', '')
+#
+# st.button("Submit")
+# # left_column.button('Submit')
