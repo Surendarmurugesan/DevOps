@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../PDF_Generation/.idea/PDF_Generation.iml" filepath="$PROJECT_DIR$/../PDF_Generation/.idea/PDF_Generation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Portfolio-app.iml" filepath="$PROJECT_DIR$/.idea/Portfolio-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../app1/.idea/app1.iml" filepath="$PROJECT_DIR$/../app1/.idea/app1.iml" />
+    </modules>
+  </component>
+</project>

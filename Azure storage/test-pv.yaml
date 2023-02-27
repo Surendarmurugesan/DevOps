@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: redis-debug
+  namespace: designer
+spec:
+  selector:
+    matchLabels:
+      app: redis-debug
+  serviceName: test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis-debug
+    spec:
+      volumes:
+      - name: smb-pvc
+        persistentVolumeClaim:
+          claimName: smb-test-pvc
+      containers:
+      - name: redis-debug
+        image: ubuntu:18.04
+        command: [ "sleep" ]
+        args: [ "infinity" ]
+        resources:
+          requests:
+            cpu: 100m
+            memory: 250Mi
+          limits:
+            cpu: 200m
+            memory: 500Mi
+        volumeMounts: 
+          - name: smb-pvc
+            mountPath: /home/eastus
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0                          
+    
